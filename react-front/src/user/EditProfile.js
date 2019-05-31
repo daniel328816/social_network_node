@@ -147,7 +147,7 @@ class EditProfile extends Component {
 			return <Redirect to={`/user/${id}`} />;
 		}
 
-		const photoUrl = id ? `http://localhost:8080/user/photo/${id}`: DefaultProfile;
+		const photoUrl = id ? `http://localhost:8080/user/photo/${id}?${new Date().getTime()}`: DefaultProfile;
 
 		return (
 			<div className="container">
@@ -165,7 +165,14 @@ class EditProfile extends Component {
 
 			 	}
 
-			 	<img src={photoUrl} alt={name} />
+			 	<img 
+			 		style={{ height: "200px", width:"auto" }}
+			 		className="img-thumbnail"
+			 		src={photoUrl} 
+			 		onError={ i => (i.target.src = `${DefaultProfile}`)}
+			 		alt={name} 
+
+			 	/>
 
 				{this.signupForm(name, email, password)}
 			</div>

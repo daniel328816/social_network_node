@@ -43,22 +43,19 @@ class Profile extends Component{
 	render(){
 		const {redirectToSignin, user} = this.state;
 		if(redirectToSignin) return <Redirect to="/signin" />;
-
+		const photoUrl = user._id ? `http://localhost:8080/user/photo/${user._id}?${new Date().getTime()}`: DefaultProfile;
 		return (
 				<div className="container">
 					<h2 className="mt-5 mb-5">Profile</h2>
 					<div className="row">
 						<div className="col-md-6">
-							 <img 
-							  		className="card-img-top" 
-							  		src={DefaultProfile} 
-							  		alt={user.name} 
-							  		style={{
-							  			width: "100%",
-							  			height: "15vw",
-							  			objectFit: "cover"
-							  		}}
-							  />
+							<img 
+						 		style={{ height: "200px", width:"auto" }}
+						 		className="img-thumbnail"
+						 		src={photoUrl} 
+						 		onError={ i => (i.target.src = `${DefaultProfile}`)}
+						 		alt={user.name} 
+			 				/>
 							
 						</div>
 
