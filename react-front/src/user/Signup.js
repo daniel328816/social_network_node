@@ -61,7 +61,9 @@ class Signup extends Component {
 			 		</div>
 			 		<button onClick={this.clickSubmit} className="btn btn-raised btn-primary">Submit</button>
 			 	</form>
-		)
+		);
+
+
 	render(){
 		const {name, email, password, error, open} = this.state;
 		return (
