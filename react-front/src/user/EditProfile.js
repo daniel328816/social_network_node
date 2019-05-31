@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { isAuthenticated } from '../auth';
 import { read, update } from './apiUser';
 import { Redirect } from 'react-router-dom';
-
+import DefaultProfile from '../images/avatar.jpg';
 
 class EditProfile extends Component {
 
@@ -147,7 +147,7 @@ class EditProfile extends Component {
 			return <Redirect to={`/user/${id}`} />;
 		}
 
-		
+		const photoUrl = id ? `http://localhost:8080/user/photo/${id}`: DefaultProfile;
 
 		return (
 			<div className="container">
@@ -164,6 +164,9 @@ class EditProfile extends Component {
 			 			</div>): ("")
 
 			 	}
+
+			 	<img src={photoUrl} alt={name} />
+
 				{this.signupForm(name, email, password)}
 			</div>
 
