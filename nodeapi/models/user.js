@@ -22,9 +22,13 @@ const userSchema = new mongoose.Schema({
 		type: Date,
 		default: Date.now
 	},
-	updated: Date
+	updated: Date,
+	photo: {
+		data: Buffer,
+		contentType: String
+	}
 
-})
+});
 /*
 	Virtual fields are additional fields for a given model.
 	Their values can be set manually or automatically with defined functionality.
