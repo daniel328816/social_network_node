@@ -1,5 +1,4 @@
-export const update = (userId, token, post) => {
-		console.log("USER DATA UPDATE: ",user);
+export const create = (userId, token, post) => {
 		return fetch(`http://localhost:8080/post/new/${userId}`,{
 			method:'POST',
 			headers: {
