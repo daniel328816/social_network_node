@@ -5,6 +5,7 @@ class FollowProfileButton extends Component {
 	followClick = () => {
 		this.props.onButtonClick(follow);
 	};
+	
 	unfollowClick = () => {
 		this.props.onButtonClick(unfollow);
 	};
