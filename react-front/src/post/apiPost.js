@@ -12,3 +12,14 @@ export const create = (userId, token, post) => {
 		})
 		.catch(err => console.log(err));
 	};
+
+export const list = () => {
+	return fetch(`http://localhost:8080/posts`,{
+			method:'GET'
+		})
+		.then(response => {
+			return response.json();
+		})
+		.catch(err => console.log(err));
+
+};
