@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {list} from './apiPost';
-// import DefaultProfile from '../images/avatar.jpg';
+import DefaultPost from '../images/mountains.jpeg';
 import { Link } from 'react-router-dom';
 
 
@@ -33,6 +33,13 @@ class Posts extends Component {
 
 								<div className="card col-md-4" key={i}>
 								  <div className="card-body">
+								 	<img 
+								  		src={`http://localhost:8080/post/photo/${post._id}`} 
+								  		alt={post.title}
+								  		onError={ i=> (i.target.src = `${DefaultPost}`)}
+								  		className="img-thumbnail mb-3"
+								  		style={{ height: "200px", width: "auto"}}
+								   />
 								    <h5 className="card-title">{post.title}</h5>
 								    <p className="card-text">{post.body.substring(0,100)}</p>
 								    <br />
