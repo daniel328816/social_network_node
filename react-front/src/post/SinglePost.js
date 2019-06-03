@@ -54,9 +54,15 @@ class SinglePost extends Component{
 	render(){
 		const {post} = this.state;
 		return (
-			<div className="container">
+			<div className="eontainer">
 				<h2 className="display-2 mt-5 mb-5">{post.title}</h2>
-				{this.renderPost(post)}
+				{
+			 		!post? (<div className="jumbotron text-center">
+			 				<h2>loading..</h2>
+			 			</div>): (this.renderPost(post))
+
+			 	}
+				
 			</div>
 		);
 	};
