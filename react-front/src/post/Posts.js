@@ -58,7 +58,7 @@ class Posts extends Component {
 								    </Link>
 								  </div>
 								</div>	
-							)
+							);
 					})}
 			</div>
 		);
