@@ -44,10 +44,7 @@ class Posts extends Component {
 								    <p className="card-text">{post.body.substring(0,100)}</p>
 								    <br />
 								    <p className="font-italic mark">
-								    	Posted by 
-								    	<Link to={`${posterId}`}>
-								    		{posterName}{" "}
-								    	</Link>
+								    	Posted by <Link to={`${posterId}`}>{posterName}{" "}</Link>
 								    	on {new Date(post.created).toDateString()}
 								    </p>
 								    <Link 
