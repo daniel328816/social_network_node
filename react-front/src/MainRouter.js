@@ -8,6 +8,7 @@ import Profile from "./user/Profile";
 import Users from "./user/Users";
 import EditProfile from "./user/EditProfile";
 import NewPost from "./post/NewPost";
+import SinglePost from "./post/SinglePost";
 import PrivateRoute from "./auth/PrivateRoute";
 import FindPeople from "./user/FindPeople";
 
