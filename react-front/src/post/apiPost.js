@@ -23,3 +23,14 @@ export const list = () => {
 		.catch(err => console.log(err));
 
 };
+
+export const singlePost = (postId) => {
+	return fetch(`http://localhost:8080/post/${postId}`,{
+			method:'GET'
+		})
+		.then(response => {
+			return response.json();
+		})
+		.catch(err => console.log(err));
+
+};

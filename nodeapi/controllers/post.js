@@ -121,4 +121,7 @@ exports.photo = (req, res, next) => {
 	return res.send(req.post.photo.data);
 };
 
+exports.singlePost = (req, res) => {
+	return res.json(req.post);
+};
 
